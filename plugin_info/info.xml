@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+	<id>fullyKiosK</id>
+	<name>fullyKiosK</name>
+	<description>Plugin fullyKiosK : gestion tablettes et smartphones utilisant l'application fullyKiosK</description>
+	<licence>AGPL</licence>
+	<author>ssc</author>
+	<installation>Aucune</installation>
+	<require>2.3</require>
+	<category>monitoring</category>
+</info>
