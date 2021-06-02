@@ -25,23 +25,23 @@
 	if (init('Jeeid') == '') {
 		throw new Exception(__('L\'id ne peut etre vide', __FILE__));
 	}
-	$ = fullyKiosK::byId(init('Jeeid'));
-	if (!is_object($fullyKiosK)) {
+	$ = ecoleDirecte::byId(init('Jeeid'));
+	if (!is_object($ecoleDirecte)) {
 		throw new Exception(__('L\'équipement est introuvable : ', __FILE__) . init('Jeeid'));
 	}
-	if ($fullyKiosK->getEqType_name() != 'fullyKiosK') {
-		throw new Exception(__('Cet équipement n\'est pas de type fullyKiosK : ', __FILE__) . $fullyKiosK->getEqType_name());
+	if ($ecoleDirecte->getEqType_name() != 'ecoleDirecte') {
+		throw new Exception(__('Cet équipement n\'est pas de type ecoleDirecte : ', __FILE__) . $ecoleDirecte->getEqType_name());
 	}
 
-	$ip = $fullyKiosK->getConfiguration('addressip');
-	$user = $fullyKiosK->getConfiguration('user','admin');
-	$password = $fullyKiosK->getConfiguration('password');
+	$ip = $ecoleDirecte->getConfiguration('addressip');
+	$user = $ecoleDirecte->getConfiguration('user','admin');
+	$password = $ecoleDirecte->getConfiguration('password');
 	$fullyURL = "http://{$user}:{$pin}@{$ip}/";
 
 	$scheme = ( (! empty($_SERVER['REQUEST_SCHEME']) && $_SERVER['REQUEST_SCHEME'] == 'https') || (! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (! empty($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '2323') )  ? 'https' : 'http';
 
-	$proxypath = $scheme.'://'.$_SERVER['HTTP_HOST'].'/plugins/fullyKiosK/proxy/'.init('Jeeid').'/';
-	$url= $fullyKiosKURL.$_GET['Jeeq'].'?'.$_SERVER["QUERY_STRING"];
+	$proxypath = $scheme.'://'.$_SERVER['HTTP_HOST'].'/plugins/ecoleDirecte/proxy/'.init('Jeeid').'/';
+	$url= $ecoleDirecteURL.$_GET['Jeeq'].'?'.$_SERVER["QUERY_STRING"];
 
 	include('vx_curl.class.php');
 	$curl = new vx_curl();

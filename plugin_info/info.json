@@ -1,15 +1,23 @@
 
 {
-	"id" : "fullyKiosK",
-	"name" : "fullyKiosK",
-	"description" : "Plugin fullyKiosK pour la gestion des tablettes utilisant l'application fullykiosk",
+	"id" : "",
+	"name" : "ecoleDirecte",
+	"description" : "Plugin ecoleDirecte",
 	"licence" : "AGPL",
 	"author" : "Ssc",
 	"require" : "2.3",
-	"hasDependency" : 1,
-	"hasOwnDeamon" : 1,	
-	"category" : "monitoring",
-	"changelog" : "https://sebsst.github.io/fullyKiosK/#language#/changelog",
-  "documentation" : "https://sebsst.github.io/fullyKiosK/#language#/"
+	"hasDependency" : 0,
+	"hasOwnDeamon" : 0,
+	"category" : "organization",
+	"changelog" : "https://sebsst.github.io/ecoleDirecte/#language#/changelog",
+  "documentation" : "https://sebsst.github.io/ecoleDirecte/#language#/",
+	"compatibility": [
+		"miniplus",
+		"smart",
+		"rpi",
+		"docker",
+		"diy",
+		"mobile",
+		"v4"
+]
 }
-
