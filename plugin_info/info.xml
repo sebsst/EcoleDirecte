@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <info>
-	<id>fullyKiosK</id>
-	<name>fullyKiosK</name>
-	<description>Plugin fullyKiosK : gestion tablettes et smartphones utilisant l'application fullyKiosK</description>
+	<id>ecoleDirecte</id>
+	<name>ecoleDirecte</name>
+	<description>Plugin ecoleDirecte</description>
 	<licence>AGPL</licence>
 	<author>ssc</author>
 	<installation>Aucune</installation>

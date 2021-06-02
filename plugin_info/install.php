@@ -18,12 +18,12 @@
 
 require_once dirname(__FILE__) . '/../../../core/php/core.inc.php';
 
-function fullyKiosK_install() {
-  
-    $cron = cron::byClassAndFunction('fullyKiosK', 'daemon');
+function ecoleDirecte_install() {
+
+    $cron = cron::byClassAndFunction('ecoleDirecte', 'daemon');
     if (!is_object($cron)) {
         $cron = new cron();
-        $cron->setClass('fullyKiosK');
+        $cron->setClass('ecoleDirecte');
         $cron->setFunction('daemon');
         $cron->setEnable(1);
         $cron->setDeamon(1);
@@ -34,11 +34,11 @@ function fullyKiosK_install() {
 
 }
 
-function fullyKiosK_update() {
-    $cron = cron::byClassAndFunction('fullyKiosK', 'daemon');
+function _update() {
+    $cron = cron::byClassAndFunction('ecoleDirecte', 'daemon');
     if (!is_object($cron)) {
         $cron = new cron();
-        $cron->setClass('fullyKiosK');
+        $cron->setClass('ecoleDirecte');
         $cron->setFunction('daemon');
         $cron->setEnable(1);
         $cron->setDeamon(1);
@@ -46,26 +46,26 @@ function fullyKiosK_update() {
         $cron->setTimeout('1440');
         $cron->save();
     }
-      foreach (eqLogic::byType('fullyKiosK', false) as $eqpt) {
-        
+      foreach (eqLogic::byType('ecoleDirecte', false) as $eqpt) {
+
         $eqpt->save();
-        
+
         if( $eqpt->getConfiguration('refreshDelay', '') == '')
         { $eqpt->setConfiguration('refreshDelay', '15');
           $eqpt->save();
-        
+
         }
 
- 
+
     }
-  
+
 }
 
 
-function fullyKiosK_remove() {
+function ecoleDirecte_remove() {
 
 function MQTT_remove() {
-    $cron = cron::byClassAndFunction('fullyKiosK', 'daemon');
+    $cron = cron::byClassAndFunction('ecoleDirecte', 'daemon');
     if (is_object($cron)) {
         $cron->stop();
         $cron->remove();
